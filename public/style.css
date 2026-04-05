@@ -1,0 +1,298 @@
+/* ── Reset & Base ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --color-bg: #faf9f7;
+  --color-text: #2c2c2c;
+  --color-muted: #6b6b6b;
+  --color-accent: #c0392b;
+  --color-swiss: #d4322c;
+  --color-italy: #2e7d32;
+  --color-card: #ffffff;
+  --color-border: #e8e5e1;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --radius: 12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  height: 50vh;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(135deg, #1a3a5c 0%, #c0392b 50%, #2e7d32 100%);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ── SMS Banner ── */
+.sms-banner {
+  background: linear-gradient(135deg, #1a3a5c, #264653);
+  color: #fff;
+  padding: 40px 0;
+}
+
+.sms-inner {
+  text-align: center;
+}
+
+.sms-inner h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.sms-inner > p {
+  opacity: 0.85;
+  margin-bottom: 20px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sms-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sms-form input,
+.sms-form select {
+  padding: 12px 16px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.sms-form input::placeholder { color: rgba(255,255,255,0.5); }
+
+.sms-form select option { color: #333; background: #fff; }
+
+.sms-form button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a3a5c;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.sms-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.sms-status {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.sms-status.success { color: #a8e6a3; }
+.sms-status.error { color: #ffb3b3; }
+
+/* ── Itinerary ── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  text-align: center;
+  margin: 48px 0 32px;
+}
+
+.itinerary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 60px;
+}
+
+/* Day Divider */
+.day-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.day-divider .day-label {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-muted);
+}
+
+.day-divider .day-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Card */
+.event-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.event-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.event-card .card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.event-card .card-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.event-card .card-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-travel { background: #e8f0fe; color: #1a56db; }
+.badge-sightseeing { background: #fef3e2; color: #b45309; }
+
+.event-card .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+}
+
+.event-card .card-meta span::before {
+  margin-right: 4px;
+}
+
+.event-card .card-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #444;
+}
+
+.card-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-cal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  text-decoration: none;
+}
+
+.btn-cal:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.btn-cal svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Country flag accent */
+.event-card[data-country="switzerland"] {
+  border-left: 4px solid var(--color-swiss);
+}
+
+.event-card[data-country="italy"] {
+  border-left: 4px solid var(--color-italy);
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 32px 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .sms-form { flex-direction: column; align-items: stretch; }
+  .event-card .card-header { flex-direction: column; }
+  .event-card { padding: 18px; }
+}

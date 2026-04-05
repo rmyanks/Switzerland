@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switzerland &amp; Italy 2026 — Family Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Switzerland &amp; Italy</h1>
+      <p class="hero-subtitle">Family Trip &middot; July 11–25, 2026</p>
+    </div>
+  </header>
+
+  <!-- SMS Signup Banner -->
+  <section class="sms-banner" id="sms-section">
+    <div class="container">
+      <div class="sms-inner">
+        <div class="sms-text">
+          <h2>Daily Morning Texts</h2>
+          <p>Get a text each morning with the day's itinerary and clothing recommendations based on local weather.</p>
+        </div>
+        <form id="sms-form" class="sms-form">
+          <input type="tel" id="phone-input" placeholder="+1 (555) 123-4567" required>
+          <select id="timezone-select">
+            <option value="America/New_York">Eastern</option>
+            <option value="America/Chicago">Central</option>
+            <option value="America/Denver">Mountain</option>
+            <option value="America/Los_Angeles">Pacific</option>
+            <option value="Europe/Zurich">Europe (CET)</option>
+          </select>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p id="sms-status" class="sms-status"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Itinerary -->
+  <main class="container" id="itinerary">
+    <h2 class="section-title">Itinerary</h2>
+    <div id="itinerary-list" class="itinerary-list"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Family Trip. Made with love.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
