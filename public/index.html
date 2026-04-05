@@ -5,17 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Switzerland &amp; Italy 2026 — Family Trip</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Switzerland &amp; Italy</h1>
-      <p class="hero-subtitle">Family Trip &middot; July 11–25, 2026</p>
+      <p class="hero-eyebrow">Family Adventure 2026</p>
+      <h1>Switzerland <span class="amp">&amp;</span> Italy</h1>
+      <p class="hero-subtitle">May 17 – June 2 &middot; 17 Days</p>
+      <div class="hero-route">
+        <span>Atlanta</span>
+        <span class="route-arrow">→</span>
+        <span>Montreux</span>
+        <span class="route-arrow">→</span>
+        <span>Lauterbrunnen</span>
+        <span class="route-arrow">→</span>
+        <span>Locarno</span>
+        <span class="route-arrow">→</span>
+        <span>Florence</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <a href="#sms-section">↓</a>
     </div>
   </header>
 
@@ -23,36 +38,60 @@
   <section class="sms-banner" id="sms-section">
     <div class="container">
       <div class="sms-inner">
+        <div class="sms-icon">📱</div>
         <div class="sms-text">
           <h2>Daily Morning Texts</h2>
-          <p>Get a text each morning with the day's itinerary and clothing recommendations based on local weather.</p>
+          <p>Get a text each morning with the day's itinerary and what to wear based on local weather.</p>
         </div>
         <form id="sms-form" class="sms-form">
           <input type="tel" id="phone-input" placeholder="+1 (555) 123-4567" required>
           <select id="timezone-select">
-            <option value="America/New_York">Eastern</option>
-            <option value="America/Chicago">Central</option>
-            <option value="America/Denver">Mountain</option>
-            <option value="America/Los_Angeles">Pacific</option>
+            <option value="America/New_York">Eastern Time</option>
+            <option value="America/Chicago">Central Time</option>
+            <option value="America/Denver">Mountain Time</option>
+            <option value="America/Los_Angeles">Pacific Time</option>
             <option value="Europe/Zurich">Europe (CET)</option>
           </select>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Sign Me Up</button>
         </form>
         <p id="sms-status" class="sms-status"></p>
       </div>
     </div>
   </section>
 
+  <!-- Key Info -->
+  <section class="key-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">🚗</div>
+          <h3>Rental Car</h3>
+          <p>Montreux → Lauterbrunnen → Locarno + Verzasca. Returned before Florence.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🚶</div>
+          <h3>Car-Free Zones</h3>
+          <p>Mürren &amp; Wengen (cable car/train only). Florence is all walkable.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">👶</div>
+          <h3>Family Pace</h3>
+          <p>1 main activity per day + nap windows. Stroller-friendly routes throughout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Itinerary -->
   <main class="container" id="itinerary">
-    <h2 class="section-title">Itinerary</h2>
+    <h2 class="section-title">The Itinerary</h2>
     <div id="itinerary-list" class="itinerary-list"></div>
   </main>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Family Trip. Made with love.</p>
+      <p>&copy; 2026 Family Trip &middot; Made with love</p>
     </div>
   </footer>
 
