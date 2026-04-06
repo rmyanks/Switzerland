@@ -15,7 +15,7 @@ const itinerary = [
     description: "Overnight flight to London (BA 226). The adventure begins!",
     category: "travel",
     emoji: "✈️",
-    image: "flight"
+    image: "atlanta"
   },
 
   // ──── Day 1: Arrival → Montreux ────
@@ -32,7 +32,7 @@ const itinerary = [
     description: "Arrive at Heathrow. Quick layover before the flight to Geneva.",
     category: "travel",
     emoji: "✈️",
-    image: "flight"
+    image: "london"
   },
   {
     id: "may18-fly-geneva",
@@ -94,7 +94,7 @@ const itinerary = [
     description: "Lunch at a lakeside restaurant. Stroller nap walk along the flower-lined lake promenade with views of the Alps.",
     category: "food",
     emoji: "🍽️",
-    image: "montreux"
+    image: "lakeside"
   },
   {
     id: "may19-rochers",
@@ -142,7 +142,7 @@ const itinerary = [
     description: "Nap time and rest at the Airbnb (Luterbach 208G). Check-in at 4 PM. Recharge for the evening.",
     category: "rest",
     emoji: "😴",
-    image: "lauterbrunnen"
+    image: "lbvalley"
   },
   {
     id: "may20-staubbach",
@@ -172,7 +172,7 @@ const itinerary = [
     description: "Celebrate with a birthday dinner in the valley! Optional: catch the sunset from Mürren if energy allows.",
     category: "food",
     emoji: "🎂",
-    image: "lauterbrunnen"
+    image: "birthday"
   },
 
   // ──── Day 4: Mürren ────
@@ -204,7 +204,7 @@ const itinerary = [
     description: "Stroller nap or return to the Airbnb. Relax in the Lauterbrunnen valley — explore the village, play by the river, or simply enjoy the views.",
     category: "rest",
     emoji: "🌿",
-    image: "lauterbrunnen"
+    image: "lbvalley"
   },
 
   // ──── Day 5: Wengen ────
@@ -236,7 +236,7 @@ const itinerary = [
     description: "Nap time, then a relaxed afternoon at a café. Low-key evening in the valley.",
     category: "rest",
     emoji: "☕",
-    image: "lauterbrunnen"
+    image: "wengencafe"
   },
 
   // ──── Day 6: Flexible ────
@@ -302,7 +302,7 @@ const itinerary = [
     description: "Check in at Via Bartolomeo Rusca 9 after 3 PM. Evening at Piazza Grande — the big open square is perfect for kids to run around. Dinner and gelato with a Mediterranean vibe.",
     category: "food",
     emoji: "🍦",
-    image: "locarno"
+    image: "locarnorest"
   },
 
   // ──── Day 8: Valle Verzasca ────
