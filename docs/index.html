@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switzerland &amp; Italy 2026 — Family Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --color-bg: #faf9f7; --color-text: #2c2c2c; --color-muted: #6b6b6b;
+  --color-swiss: #d4322c; --color-italy: #2e7d32; --color-card: #ffffff;
+  --color-border: #e8e5e1; --color-dark: #1a1a2e;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12); --radius: 16px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+.hero {
+  position: relative; height: 100vh; min-height: 600px; display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  overflow: hidden; background: #1a1a2e url('https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=1800&q=80') center/cover;
+}
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 40%, rgba(26,26,46,0.85) 100%); z-index: 1; }
+.hero-content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 20px; }
+.hero-eyebrow { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.8; margin-bottom: 12px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 12px; }
+.hero h1 .amp { font-style: italic; opacity: 0.7; font-weight: 600; }
+.hero-subtitle { font-size: clamp(1.05rem, 2.5vw, 1.35rem); font-weight: 400; opacity: 0.8; margin-bottom: 28px; }
+.hero-route { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; font-size: 0.9rem; opacity: 0.7; }
+.route-arrow { opacity: 0.5; }
+.hero-scroll { position: absolute; bottom: 30px; z-index: 2; }
+.hero-scroll a { color: #fff; text-decoration: none; font-size: 1.8rem; opacity: 0.5; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+.sms-banner { background: linear-gradient(135deg, #1a3a5c, #16213e); color: #fff; padding: 48px 0; }
+.sms-inner { text-align: center; }
+.sms-icon { font-size: 2.5rem; margin-bottom: 8px; }
+.sms-inner h2 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 8px; }
+.sms-inner > p { opacity: 0.8; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.sms-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 600px; margin: 0 auto; }
+.sms-form input, .sms-form select { padding: 14px 18px; border: 2px solid rgba(255,255,255,0.2); border-radius: 10px; background: rgba(255,255,255,0.08); color: #fff; font-size: 1rem; font-family: var(--font-body); backdrop-filter: blur(4px); }
+.sms-form input:focus, .sms-form select:focus { outline: none; border-color: rgba(255,255,255,0.5); }
+.sms-form input::placeholder { color: rgba(255,255,255,0.4); }
+.sms-form select option { color: #333; background: #fff; }
+.sms-form button { padding: 14px 32px; border: none; border-radius: 10px; background: #fff; color: #1a3a5c; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+.sms-form button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+.sms-status { margin-top: 14px; font-size: 0.95rem; }
+.sms-status.success { color: #a8e6a3; } .sms-status.error { color: #ffb3b3; }
+.key-info { padding: 48px 0; background: #fff; border-bottom: 1px solid var(--color-border); }
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.info-card { text-align: center; padding: 24px 16px; }
+.info-icon { font-size: 2rem; margin-bottom: 10px; }
+.info-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 6px; }
+.info-card p { font-size: 0.9rem; color: var(--color-muted); line-height: 1.5; }
+.section-title { font-family: var(--font-display); font-size: 2.2rem; text-align: center; margin: 56px 0 40px; }
+.itinerary-list { display: flex; flex-direction: column; gap: 24px; padding-bottom: 80px; }
+.day-divider { display: flex; align-items: center; gap: 14px; margin-top: 20px; padding-top: 8px; }
+.day-divider .day-number { font-family: var(--font-display); font-size: 0.8rem; font-weight: 700; color: #fff; background: var(--color-dark); border-radius: 8px; padding: 4px 12px; white-space: nowrap; }
+.day-divider .day-label { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; white-space: nowrap; }
+.day-divider .day-date { font-size: 0.85rem; color: var(--color-muted); white-space: nowrap; }
+.day-divider .day-line { flex: 1; height: 1px; background: var(--color-border); }
+.event-card { background: var(--color-card); border-radius: var(--radius); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); overflow: hidden; transition: box-shadow 0.25s, transform 0.25s; }
+.event-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.event-card .card-image { width: 100%; height: 220px; object-fit: cover; display: block; }
+.event-card .card-body { padding: 24px; }
+.event-card .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.event-card .card-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.card-title .emoji { font-style: normal; }
+.event-card .card-badge { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+.badge-travel { background: #e8f0fe; color: #1a56db; }
+.badge-sightseeing { background: #fef3e2; color: #b45309; }
+.badge-food { background: #fce4ec; color: #c62828; }
+.badge-rest { background: #e8f5e9; color: #2e7d32; }
+.badge-optional { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 20px; background: #f3e8ff; color: #7c3aed; white-space: nowrap; }
+.event-card .card-meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: var(--color-muted); margin-bottom: 12px; }
+.card-meta-item { display: flex; align-items: center; gap: 4px; }
+.event-card .card-desc { font-size: 0.95rem; line-height: 1.7; color: #444; }
+.card-actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-cal { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-bg); color: var(--color-text); font-size: 0.84rem; font-weight: 500; cursor: pointer; transition: all 0.15s; text-decoration: none; }
+.btn-cal:hover { background: #eee; border-color: #ccc; transform: translateY(-1px); }
+.btn-cal svg { width: 15px; height: 15px; }
+.event-card[data-country="switzerland"] { border-left: 5px solid var(--color-swiss); }
+.event-card[data-country="italy"] { border-left: 5px solid var(--color-italy); }
+footer { text-align: center; padding: 40px 0; color: var(--color-muted); font-size: 0.9rem; border-top: 1px solid var(--color-border); }
+@media (max-width: 700px) {
+  .info-grid { grid-template-columns: 1fr; gap: 8px; }
+  .sms-form { flex-direction: column; align-items: stretch; }
+  .event-card .card-header { flex-direction: column; gap: 8px; }
+  .event-card .card-body { padding: 18px; }
+  .event-card .card-image { height: 180px; }
+  .day-divider { flex-wrap: wrap; gap: 8px; }
+  .hero-route { font-size: 0.8rem; }
+}
+@media (max-width: 480px) { .event-card .card-image { height: 150px; } .event-card .card-title { font-size: 1.2rem; } }
+  </style>
+</head>
+<body>
+  <header class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Family Adventure 2026</p>
+      <h1>Switzerland <span class="amp">&amp;</span> Italy</h1>
+      <p class="hero-subtitle">May 17 – June 2 &middot; 17 Days</p>
+      <div class="hero-route">
+        <span>Atlanta</span><span class="route-arrow">&rarr;</span>
+        <span>Montreux</span><span class="route-arrow">&rarr;</span>
+        <span>Lauterbrunnen</span><span class="route-arrow">&rarr;</span>
+        <span>Locarno</span><span class="route-arrow">&rarr;</span>
+        <span>Florence</span>
+      </div>
+    </div>
+    <div class="hero-scroll"><a href="#sms-section">&darr;</a></div>
+  </header>
+
+  <section class="sms-banner" id="sms-section">
+    <div class="container">
+      <div class="sms-inner">
+        <div class="sms-icon">&#128241;</div>
+        <h2>Daily Morning Texts</h2>
+        <p>Get a text each morning with the day's itinerary and what to wear based on local weather.</p>
+        <form id="sms-form" class="sms-form">
+          <input type="tel" id="phone-input" placeholder="+1 (555) 123-4567" required>
+          <select id="timezone-select">
+            <option value="America/New_York">Eastern Time</option>
+            <option value="America/Chicago">Central Time</option>
+            <option value="America/Denver">Mountain Time</option>
+            <option value="America/Los_Angeles">Pacific Time</option>
+            <option value="Europe/Zurich">Europe (CET)</option>
+          </select>
+          <button type="submit">Sign Me Up</button>
+        </form>
+        <p id="sms-status" class="sms-status"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="key-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card"><div class="info-icon">&#128663;</div><h3>Rental Car</h3><p>Montreux &rarr; Lauterbrunnen &rarr; Locarno + Verzasca. Returned before Florence.</p></div>
+        <div class="info-card"><div class="info-icon">&#128694;</div><h3>Car-Free Zones</h3><p>M&uuml;rren &amp; Wengen (cable car/train only). Florence is all walkable.</p></div>
+        <div class="info-card"><div class="info-icon">&#128118;</div><h3>Family Pace</h3><p>1 main activity per day + nap windows. Stroller-friendly routes throughout.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="itinerary">
+    <h2 class="section-title">The Itinerary</h2>
+    <div id="itinerary-list" class="itinerary-list"></div>
+  </main>
+
+  <footer><div class="container"><p>&copy; 2026 Family Trip &middot; Made with love</p></div></footer>
+
+<script>
+const IMAGES = {
+  flight:       "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&q=80",
+  geneva:       "https://images.unsplash.com/photo-1573108037329-37aa135a142e?w=1200&q=80",
+  montreux:     "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=1200&q=80",
+  chillon:      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=1200&q=80",
+  rochers:      "https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35?w=1200&q=80",
+  lauterbrunnen:"https://images.unsplash.com/photo-1527095650862-b3a40ab34ee7?w=1200&q=80",
+  staubbach:    "https://images.unsplash.com/photo-1508699694424-1380e1a498f4?w=1200&q=80",
+  murren:       "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80",
+  wengen:       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+  jungfraujoch: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80",
+  trummelbach:  "https://images.unsplash.com/photo-1432405972618-c6b0cfba870c?w=1200&q=80",
+  locarno:      "https://images.unsplash.com/photo-1515861461-74fba20f27c0?w=1200&q=80",
+  verzasca:     "https://images.unsplash.com/photo-1504858700536-882c978a3464?w=1200&q=80",
+  florence:     "https://images.unsplash.com/photo-1543429257-3eb0b65d9c58?w=1200&q=80",
+  pontevecchio: "https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?w=1200&q=80",
+  boboli:       "https://images.unsplash.com/photo-1523729820425-8c2bac21a104?w=1200&q=80",
+  signoria:     "https://images.unsplash.com/photo-1555990793-da11153b2473?w=1200&q=80",
+  michelangelo: "https://images.unsplash.com/photo-1534359265607-b39e68b36e03?w=1200&q=80",
+  tuscany:      "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=1200&q=80"
+};
+
+const itinerary = [
+  {id:"may17-depart",date:"2026-05-17",dayLabel:"Travel Day",title:"Depart Atlanta",location:"Atlanta, GA",lat:33.6407,lon:-84.4277,startTime:"22:30",endTime:"23:59",description:"Overnight flight to London (BA 226). The adventure begins!",category:"travel",emoji:"\u2708\uFE0F",image:"flight"},
+  {id:"may18-arrive-london",date:"2026-05-18",dayLabel:"Arrival \u2192 Montreux",title:"Land in London",location:"London Heathrow, UK",lat:51.47,lon:-0.4543,startTime:"11:45",endTime:"14:10",description:"Arrive at Heathrow. Quick layover before the flight to Geneva.",category:"travel",emoji:"\u2708\uFE0F",image:"flight"},
+  {id:"may18-fly-geneva",date:"2026-05-18",dayLabel:"Arrival \u2192 Montreux",title:"Fly to Geneva",location:"Geneva, Switzerland",lat:46.2044,lon:6.1432,startTime:"14:10",endTime:"16:55",description:"BA 750 to Geneva. Pick up rental car at the airport (5:30\u20136:30 PM), then drive ~1 hour to Montreux.",category:"travel",emoji:"\u2708\uFE0F",image:"geneva"},
+  {id:"may18-montreux-evening",date:"2026-05-18",dayLabel:"Arrival \u2192 Montreux",title:"Evening in Montreux",location:"Montreux, Switzerland",lat:46.4312,lon:6.9107,startTime:"18:30",endTime:"21:00",description:"Check in at Rue du Sacre du Printemps 12. Walk along the Lake Geneva promenade \u2014 flat and stroller-friendly. Dinner nearby and early night after the long journey.",category:"sightseeing",emoji:"\uD83C\uDF05",image:"montreux"},
+  {id:"may19-chillon",date:"2026-05-19",dayLabel:"Montreux (Easy Day)",title:"Ch\u00e2teau de Chillon",location:"Montreux, Switzerland",lat:46.4142,lon:6.9275,startTime:"09:30",endTime:"11:30",description:"Visit the stunning medieval castle on Lake Geneva. 5 min drive with easy parking. Very kid-friendly \u2014 towers to climb, tunnels to explore, and open courtyards.",category:"sightseeing",emoji:"\uD83C\uDFF0",image:"chillon"},
+  {id:"may19-lake-lunch",date:"2026-05-19",dayLabel:"Montreux (Easy Day)",title:"Lunch & Lake Promenade",location:"Montreux, Switzerland",lat:46.4312,lon:6.9107,startTime:"12:00",endTime:"14:00",description:"Lunch at a lakeside restaurant. Stroller nap walk along the flower-lined lake promenade with views of the Alps.",category:"food",emoji:"\uD83C\uDF7D\uFE0F",image:"montreux"},
+  {id:"may19-rochers",date:"2026-05-19",dayLabel:"Montreux (Easy Day)",title:"Rochers-de-Naye",location:"Montreux, Switzerland",lat:46.4312,lon:6.978,startTime:"14:30",endTime:"16:30",description:"Optional: scenic cogwheel train ride to the summit at 2,042m. Panoramic views over Lake Geneva and the Alps, plus Alpine marmots!",category:"sightseeing",emoji:"\uD83C\uDFD4\uFE0F",optional:true,image:"rochers"},
+  {id:"may20-drive",date:"2026-05-20",dayLabel:"Drive to Lauterbrunnen \uD83C\uDF82",title:"Scenic Drive to Lauterbrunnen",location:"Lauterbrunnen, Switzerland",lat:46.5936,lon:7.9091,startTime:"11:00",endTime:"13:30",description:"Check out by 11 AM. Scenic 2 hr 15 min drive through the Swiss countryside with flexible stops. Lunch upon arrival.",category:"travel",emoji:"\uD83D\uDE97",image:"lauterbrunnen"},
+  {id:"may20-rest",date:"2026-05-20",dayLabel:"Drive to Lauterbrunnen \uD83C\uDF82",title:"Rest & Settle In",location:"Lauterbrunnen, Switzerland",lat:46.5936,lon:7.9091,startTime:"13:30",endTime:"16:00",description:"Nap time and rest at the Airbnb (Luterbach 208G). Check-in at 4 PM. Recharge for the evening.",category:"rest",emoji:"\uD83D\uDE34",image:"lauterbrunnen"},
+  {id:"may20-staubbach",date:"2026-05-20",dayLabel:"Drive to Lauterbrunnen \uD83C\uDF82",title:"Staubbach Falls",location:"Lauterbrunnen, Switzerland",lat:46.5936,lon:7.9091,startTime:"16:30",endTime:"17:30",description:"Short, flat walk to the iconic 297m Staubbach Falls \u2014 one of the highest free-falling waterfalls in Europe. Visible right from the village!",category:"sightseeing",emoji:"\uD83D\uDCA6",image:"staubbach"},
+  {id:"may20-birthday",date:"2026-05-20",dayLabel:"Drive to Lauterbrunnen \uD83C\uDF82",title:"Birthday Dinner \uD83C\uDF89",location:"Lauterbrunnen, Switzerland",lat:46.5936,lon:7.9091,startTime:"18:30",endTime:"21:00",description:"Celebrate with a birthday dinner in the valley! Optional: catch the sunset from M\u00fcrren if energy allows.",category:"food",emoji:"\uD83C\uDF82",image:"lauterbrunnen"},
+  {id:"may21-murren",date:"2026-05-21",dayLabel:"M\u00fcrren",title:"Explore M\u00fcrren",location:"M\u00fcrren, Switzerland",lat:46.559,lon:7.8925,startTime:"09:00",endTime:"12:30",description:"Park once and take the cable car up to M\u00fcrren \u2014 a car-free Alpine village perched on a cliff. Safe streets, playgrounds, easy walks, and jaw-dropping views of the Eiger, M\u00f6nch, and Jungfrau.",category:"sightseeing",emoji:"\uD83D\uDEA1",image:"murren"},
+  {id:"may21-afternoon",date:"2026-05-21",dayLabel:"M\u00fcrren",title:"Valley Afternoon",location:"Lauterbrunnen, Switzerland",lat:46.5936,lon:7.9091,startTime:"13:00",endTime:"18:00",description:"Stroller nap or return to the Airbnb. Relax in the Lauterbrunnen valley \u2014 explore the village, play by the river, or simply enjoy the views.",category:"rest",emoji:"\uD83C\uDF3F",image:"lauterbrunnen"},
+  {id:"may22-wengen",date:"2026-05-22",dayLabel:"Wengen",title:"Train to Wengen",location:"Wengen, Switzerland",lat:46.6053,lon:7.9222,startTime:"09:00",endTime:"12:30",description:"Take the train up to this car-free village \u2014 great for kids with wide paths and stunning mountain views. Explore the village and enjoy the peaceful Alpine atmosphere.",category:"sightseeing",emoji:"\uD83D\uDE82",image:"wengen"},
+  {id:"may22-afternoon",date:"2026-05-22",dayLabel:"Wengen",title:"Afternoon Rest & Caf\u00e9",location:"Lauterbrunnen, Switzerland",lat:46.5936,lon:7.9091,startTime:"13:00",endTime:"18:00",description:"Nap time, then a relaxed afternoon at a caf\u00e9. Low-key evening in the valley.",category:"rest",emoji:"\u2615",image:"lauterbrunnen"},
+  {id:"may23-option-a",date:"2026-05-23",dayLabel:"Flexible Day",title:"Option A: Jungfraujoch",location:"Jungfraujoch, Switzerland",lat:46.5472,lon:7.9853,startTime:"08:00",endTime:"16:00",description:"The epic option \u2014 train to the Top of Europe at 3,454m. Long day but unforgettable: Ice Palace, Sphinx Observatory, panoramic Alpine views. Book tickets in advance.",category:"sightseeing",emoji:"\uD83C\uDFD4\uFE0F",optional:true,image:"jungfraujoch"},
+  {id:"may23-option-b",date:"2026-05-23",dayLabel:"Flexible Day",title:"Option B: Tr\u00fcmmelbach Falls",location:"Lauterbrunnen, Switzerland",lat:46.5693,lon:7.9111,startTime:"09:00",endTime:"12:00",description:"The easy option \u2014 just a 10 min drive. Incredible waterfalls inside the mountain, carved by glacial meltwater from the Eiger. Accessible by elevator and walkways.",category:"sightseeing",emoji:"\uD83D\uDCA6",optional:true,image:"trummelbach"},
+  {id:"may24-drive-locarno",date:"2026-05-24",dayLabel:"Drive to Locarno",title:"Scenic Drive to Locarno",location:"Locarno, Switzerland",lat:46.1708,lon:8.7994,startTime:"10:00",endTime:"13:00",description:"Check out by 10 AM. Beautiful 3-hour drive south through the Alps to the Italian-speaking Ticino region. Nap-friendly route!",category:"travel",emoji:"\uD83D\uDE97",image:"locarno"},
+  {id:"may24-piazza",date:"2026-05-24",dayLabel:"Drive to Locarno",title:"Piazza Grande & Gelato",location:"Locarno, Switzerland",lat:46.1708,lon:8.7994,startTime:"17:00",endTime:"21:00",description:"Check in at Via Bartolomeo Rusca 9 after 3 PM. Evening at Piazza Grande \u2014 the big open square is perfect for kids to run around. Dinner and gelato with a Mediterranean vibe.",category:"food",emoji:"\uD83C\uDF66",image:"locarno"},
+  {id:"may25-verzasca",date:"2026-05-25",dayLabel:"Valle Verzasca",title:"Valle Verzasca",location:"Valle Verzasca, Switzerland",lat:46.2572,lon:8.8444,startTime:"09:00",endTime:"13:00",description:"25 min drive to one of Switzerland's hidden gems. Turquoise-green river, the famous Ponte dei Salti stone bridge, and shallow spots perfect for supervised kids' play.",category:"sightseeing",emoji:"\uD83C\uDFDE\uFE0F",image:"verzasca"},
+  {id:"may25-afternoon",date:"2026-05-25",dayLabel:"Valle Verzasca",title:"Afternoon Rest & Dinner",location:"Locarno, Switzerland",lat:46.1708,lon:8.7994,startTime:"13:00",endTime:"20:00",description:"Nap in the car or back at the Airbnb. Evening dinner in Locarno.",category:"rest",emoji:"\uD83D\uDE34",image:"locarno"},
+  {id:"may26-travel-florence",date:"2026-05-26",dayLabel:"Travel to Florence",title:"Return Car & Train to Florence",location:"Florence, Italy",lat:43.7696,lon:11.2558,startTime:"09:00",endTime:"15:00",description:"Return the rental car in the morning. Train to Florence \u2014 sit back and watch the scenery shift from Alpine to Tuscan.",category:"travel",emoji:"\uD83D\uDE82",image:"florence"},
+  {id:"may26-ponte-vecchio",date:"2026-05-26",dayLabel:"Travel to Florence",title:"Ponte Vecchio & Dinner",location:"Florence, Italy",lat:43.768,lon:11.2531,startTime:"17:00",endTime:"21:00",description:"Check in at Borgo Santi Apostoli 13 after 3 PM. Walk to the iconic Ponte Vecchio \u2014 just 5 minutes away. Evening stroll, dinner, and gelato in the golden Florentine light.",category:"sightseeing",emoji:"\uD83C\uDF09",image:"pontevecchio"},
+  {id:"may27-boboli",date:"2026-05-27",dayLabel:"Florence",title:"Boboli Gardens",location:"Florence, Italy",lat:43.7626,lon:11.248,startTime:"09:00",endTime:"12:00",description:"Morning exploring the Renaissance Boboli Gardens \u2014 space to run, shady paths, fountains, grottos, and panoramic views over Florence. Perfect for little ones.",category:"sightseeing",emoji:"\uD83C\uDF33",image:"boboli"},
+  {id:"may27-signoria",date:"2026-05-27",dayLabel:"Florence",title:"Piazza della Signoria",location:"Florence, Italy",lat:43.7696,lon:11.2558,startTime:"15:00",endTime:"17:00",description:"After lunch and nap, explore the open-air sculpture gallery. The lively piazza, Neptune Fountain, and replica David make this Florence's living room.",category:"sightseeing",emoji:"\uD83D\uDDFF",image:"signoria"},
+  {id:"may27-michelangelo",date:"2026-05-27",dayLabel:"Florence",title:"Piazzale Michelangelo Sunset",location:"Florence, Italy",lat:43.7629,lon:11.265,startTime:"19:00",endTime:"21:30",description:"Optional adults' evening: climb or taxi to Piazzale Michelangelo for the best sunset panorama in Florence \u2014 the Duomo, river, and hills all laid out below. Dinner with a view.",category:"sightseeing",emoji:"\uD83C\uDF07",optional:true,image:"michelangelo"},
+  {id:"may28-wedding",date:"2026-05-28",dayLabel:"Wedding Transfer",title:"Head to Villa Boscarello",location:"Villa Boscarello, Italy",lat:43.35,lon:11.55,startTime:"10:00",endTime:"14:00",description:"Check out by 10 AM. Travel to Villa Boscarello for the wedding celebrations. Enjoy the Tuscan countryside!",category:"travel",emoji:"\uD83D\uDC92",image:"tuscany"},
+  {id:"jun02-depart",date:"2026-06-02",dayLabel:"Travel Home",title:"Fly Home via Paris",location:"Florence \u2192 Paris \u2192 Atlanta",lat:43.7696,lon:11.2558,startTime:"13:05",endTime:"19:50",description:"1:05 PM Florence \u2192 Paris (AF 1467). 4:25 PM Paris \u2192 Atlanta (AF 34). Arrive ATL at 7:50 PM. Welcome home!",category:"travel",emoji:"\u2708\uFE0F",image:"flight"}
+];
+(function () {
+  const list = document.getElementById("itinerary-list");
+  const smsForm = document.getElementById("sms-form");
+  const smsStatus = document.getElementById("sms-status");
+
+  const grouped = {};
+  const dayLabels = {};
+  for (const event of itinerary) {
+    if (!grouped[event.date]) grouped[event.date] = [];
+    grouped[event.date].push(event);
+    dayLabels[event.date] = event.dayLabel;
+  }
+
+  let dayCounter = 0;
+  for (const [date, events] of Object.entries(grouped)) {
+    const d = new Date(date + "T00:00:00");
+    dayCounter++;
+    const dateStr = d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+
+    const divider = document.createElement("div");
+    divider.className = "day-divider";
+    divider.innerHTML = '<span class="day-number">Day ' + dayCounter + '</span><span class="day-label">' + (dayLabels[date] || "") + '</span><span class="day-date">' + dateStr + '</span><span class="day-line"></span>';
+    list.appendChild(divider);
+
+    for (const ev of events) {
+      const country = (ev.location.includes("Italy") || ev.location.includes("Florence") || ev.location.includes("Villa"))
+        ? "italy"
+        : (ev.location.includes("Switzerland") || ev.location.includes("Montreux") || ev.location.includes("Lauterbrunnen") || ev.location.includes("Locarno") || ev.location.includes("Verzasca") || ev.location.includes("rren") || ev.location.includes("Wengen") || ev.location.includes("Jungfrau") || ev.location.includes("Geneva"))
+          ? "switzerland" : "";
+
+      const imageUrl = IMAGES[ev.image] || IMAGES.flight;
+      const card = document.createElement("div");
+      card.className = "event-card";
+      if (country) card.dataset.country = country;
+
+      const optionalBadge = ev.optional ? '<span class="badge-optional">Optional</span>' : "";
+
+      card.innerHTML = '<img class="card-image" src="' + imageUrl + '" alt="' + ev.title + '" loading="lazy">' +
+        '<div class="card-body">' +
+        '<div class="card-header"><span class="card-title"><span class="emoji">' + (ev.emoji || "") + '</span> ' + ev.title + '</span>' +
+        '<div style="display:flex;gap:6px;align-items:center;">' + optionalBadge + '<span class="card-badge badge-' + ev.category + '">' + ev.category + '</span></div></div>' +
+        '<div class="card-meta"><span class="card-meta-item">\uD83D\uDD50 ' + ev.startTime + ' \u2013 ' + ev.endTime + '</span><span class="card-meta-item">\uD83D\uDCCD ' + ev.location + '</span></div>' +
+        '<p class="card-desc">' + ev.description + '</p>' +
+        '<div class="card-actions">' +
+        '<a class="btn-cal" href="#" onclick="downloadICS(\'' + ev.id + '\'); return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Add to Calendar</a>' +
+        '<a class="btn-cal" href="#" onclick="downloadGoogleCal(\'' + ev.id + '\'); return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Google Calendar</a>' +
+        '</div></div>';
+      list.appendChild(card);
+    }
+  }
+
+  window.downloadICS = function (eventId) {
+    const ev = itinerary.find(function(e) { return e.id === eventId; });
+    if (!ev) return;
+    const dtStart = ev.date.replace(/-/g, "") + "T" + ev.startTime.replace(/:/g, "") + "00";
+    const dtEnd = ev.date.replace(/-/g, "") + "T" + ev.endTime.replace(/:/g, "") + "00";
+    const now = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+Z/, "Z");
+    const ics = "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//FamilyTrip//EN\r\nCALSCALE:GREGORIAN\r\nBEGIN:VEVENT\r\nDTSTART:" + dtStart + "\r\nDTEND:" + dtEnd + "\r\nSUMMARY:" + ev.title + "\r\nDESCRIPTION:" + ev.description.replace(/\n/g, "\\n") + "\r\nLOCATION:" + ev.location + "\r\nDTSTAMP:" + now + "\r\nUID:" + ev.id + "@familytrip2026\r\nEND:VEVENT\r\nEND:VCALENDAR";
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = ev.id + ".ics"; a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  window.downloadGoogleCal = function (eventId) {
+    const ev = itinerary.find(function(e) { return e.id === eventId; });
+    if (!ev) return;
+    const dtStart = ev.date.replace(/-/g, "") + "T" + ev.startTime.replace(/:/g, "") + "00";
+    const dtEnd = ev.date.replace(/-/g, "") + "T" + ev.endTime.replace(/:/g, "") + "00";
+    const url = new URL("https://calendar.google.com/calendar/render");
+    url.searchParams.set("action", "TEMPLATE");
+    url.searchParams.set("text", ev.title);
+    url.searchParams.set("dates", dtStart + "/" + dtEnd);
+    url.searchParams.set("details", ev.description);
+    url.searchParams.set("location", ev.location);
+    window.open(url.toString(), "_blank");
+  };
+
+  smsForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var phone = document.getElementById("phone-input").value.trim();
+    var timezone = document.getElementById("timezone-select").value;
+    smsStatus.textContent = "SMS signup requires the server to be running. Deploy the app or run: npm start";
+    smsStatus.className = "sms-status error";
+  });
+})();
+</script>
+</body>
+</html>
